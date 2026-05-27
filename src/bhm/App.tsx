@@ -313,7 +313,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* Right Column: Mandated Lead Form */}
+          {/* Right Column: Lead Form Card with Edmission CRM widget */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
             <div className="w-full max-w-md lg:max-w-[480px]">
               <LeadForm />
