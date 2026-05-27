@@ -187,7 +187,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FDFDFE] text-slate-800 flex flex-col font-secondary select-none antialiased">
+    <div className="min-h-screen bg-[#FDFDFE] text-slate-800 flex flex-col font-secondary antialiased">
       <div className="flex-1 flex flex-col w-full">
       {/* 1. Header Navigation */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-4">
