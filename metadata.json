@@ -1,0 +1,6 @@
+{
+  "name": "AMC Degree College - Hotel Management Landing Page",
+  "description": "Interactive, highly-polished BHM admission landing page for AMC Degree College Bangalore featuring curriculum modules, placement partners, campus labs tour, and live lead tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
