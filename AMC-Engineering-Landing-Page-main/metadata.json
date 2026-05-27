@@ -1,0 +1,6 @@
+{
+  "name": "AMC Engineering College Landing Page",
+  "description": "A visually aesthetic, interactive landing page for AMC Engineering College in Bangalore. Contains comprehensive information on programs, placements, campus life, student works, and an interactive lead capture form.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

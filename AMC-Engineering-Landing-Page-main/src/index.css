@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Roboto", monospace;
+  
+  --color-amc-navy: #161D4A;
+  --color-amc-yellow: #FED304;
+  --color-amc-lightblue: #ADDDF1;
+}
+
+@layer base {
+  body {
+    background-color: #FFFFFF;
+    color: #161D4A;
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom animated gradient for beautiful modern backgrounds */
+.bg-mesh-pattern {
+  background-color: #161D4A;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(173, 221, 241, 0.15) 0px, transparent 50%), 
+    radial-gradient(at 100% 0%, rgba(254, 211, 4, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(173, 221, 241, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(254, 211, 4, 0.05) 0px, transparent 50%);
+}
+
+.bg-mesh-light {
+  background-color: #FFFFFF;
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(173, 221, 241, 0.25) 0px, transparent 40%),
+    radial-gradient(at 90% 80%, rgba(254, 211, 4, 0.15) 0px, transparent 40%);
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #161D4A;
+}
+::-webkit-scrollbar-thumb {
+  background: #ADDDF1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FED304;
+}
+
+@keyframes marquee-ltr {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-ltr {
+  animation: marquee-ltr 32s linear infinite;
+}
+
+.pause-on-hover:hover .animate-marquee-ltr {
+  animation-play-state: paused;
+}
+
