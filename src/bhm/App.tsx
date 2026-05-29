@@ -311,6 +311,34 @@ export default function App() {
                 <ChevronRight className="w-5 h-5 stroke-[3]" />
               </button>
             </div>
+            <div className="flex flex-wrap justify-start items-center gap-6 md:gap-5 py-[20px]">
+            {/* AICTE Logo */}
+            <div className="bg-white rounded-md shadow-sm border border-red-50 p-0 w-[90px] h-[100px] md:w-[90px] md:h-[90px] flex items-start justify-center overflow-hidden">
+              <img 
+                src="https://i.postimg.cc/VSzVDbxT/image-28.png" 
+                alt="AICTE Approved" 
+                className="w-full h-full object-contain"
+              />
+            </div>
+            
+            {/* NAAC Logo */}
+            <div className="bg-white rounded-md shadow-sm border border-red-50 p-0 w-[90px] h-[100px] md:w-[90px] md:h-[90px] flex items-start justify-center overflow-hidden">
+              <img 
+                src="https://i.postimg.cc/sB3NwZkk/image-30.png" 
+                alt="NAAC Accredited" 
+                className="w-full h-full object-contain"
+              />
+            </div>
+            
+            {/* Bangalore University Logo */}
+            <div className="bg-white rounded-md shadow-sm border border-red-50 p-0 w-[90px] h-[100px] md:w-[90px] md:h-[90px] flex items-start justify-center overflow-hidden">
+              <img 
+                src="https://i.postimg.cc/NLBJsr90/image-29.png" 
+                alt="Bangalore University" 
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
           </div>
 
           {/* Right Column: Lead Form Card with Edmission CRM widget */}
@@ -577,10 +605,10 @@ export default function App() {
       </section>
 
       {/* ACCREDITATIONS SECTION (Logos) */}
-      <section className="bg-[#FDF9F9] py-12 border-b border-gray-100">
+      {/* <section className="bg-[#FDF9F9] py-12 border-b border-gray-100">
         <div className="max-w-[1000px] mx-auto px-[20px] md:px-0">
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
-            {/* AICTE Logo */}
+
             <div className="bg-white rounded-md shadow-sm border border-red-50 p-0 w-[140px] h-[100px] md:w-[180px] md:h-[120px] flex items-center justify-center overflow-hidden">
               <img 
                 src="https://i.postimg.cc/VSzVDbxT/image-28.png" 
@@ -589,7 +617,7 @@ export default function App() {
               />
             </div>
             
-            {/* NAAC Logo */}
+
             <div className="bg-white rounded-md shadow-sm border border-red-50 p-0 w-[140px] h-[100px] md:w-[180px] md:h-[120px] flex items-center justify-center overflow-hidden">
               <img 
                 src="https://i.postimg.cc/sB3NwZkk/image-30.png" 
@@ -598,7 +626,7 @@ export default function App() {
               />
             </div>
             
-            {/* Bangalore University Logo */}
+
             <div className="bg-white rounded-md shadow-sm border border-red-50 p-0 w-[140px] h-[100px] md:w-[180px] md:h-[120px] flex items-center justify-center overflow-hidden">
               <img 
                 src="https://i.postimg.cc/NLBJsr90/image-29.png" 
@@ -608,7 +636,7 @@ export default function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* SECTION 2 – PAIN POINT (DESIGNED EXACTLY AS THE REFERENCE IMAGE UI) */}
       <section className="bg-white py-14 border-b border-gray-100 relative">
@@ -623,7 +651,7 @@ export default function App() {
 
           {/* Grid Layout of the main row and content columns */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-[20px] items-start">
-            {/* Left Box: Elegant Cocktail / Beverage strainer pouring visual with overlay buttons matching reference */}
+
             <div className="col-span-1 lg:col-span-7 relative rounded border border-gray-100 shadow-md aspect-[16/10] overflow-hidden bg-gray-50">
               <img
                 src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=1200"
@@ -633,7 +661,7 @@ export default function App() {
               />
             </div>
 
-            {/* Right Box: Poised Text paragraphs with clean typography matching reference */}
+
             <div className="col-span-1 lg:col-span-5 flex flex-col justify-between h-full pt-1">
               <div className="space-y-5 font-secondary text-[14px] md:text-[15px] leading-relaxed text-gray-700">
                 <p className="font-medium text-gray-900 font-semibold">
