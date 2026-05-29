@@ -396,9 +396,9 @@ export default function App() {
             <h2 className="text-[28px] md:text-[40px] font-bold text-[#161D4A] tracking-tight font-sans leading-tight mb-1 md:mb-2">
               Top Placements Partners
             </h2>
-            <p className="text-[13px] md:text-[15px] text-gray-700 font-secondary tracking-wide">
+            {/* <p className="text-[13px] md:text-[15px] text-gray-700 font-secondary tracking-wide">
               And industry interactions.
-            </p>
+            </p> */}
           </div>
 
           <div className="relative w-full">
@@ -636,7 +636,7 @@ export default function App() {
             {/* Right Box: Poised Text paragraphs with clean typography matching reference */}
             <div className="col-span-1 lg:col-span-5 flex flex-col justify-between h-full pt-1">
               <div className="space-y-5 font-secondary text-[14px] md:text-[15px] leading-relaxed text-gray-700">
-                <p className="font-medium text-gray-900">
+                <p className="font-medium text-gray-900 font-semibold">
                   Choosing the right career after 12th can feel uncertain.
                 </p>
 
@@ -651,7 +651,7 @@ export default function App() {
                   </li>
                   <li className="relative">
                     <span className="absolute -left-[21px] top-1.5 h-2 w-2 rounded-full bg-[#FED304]" />
-                    Others aim to capture booming <span className="font-semibold text-gray-900">food-tech (like Zomato) and culinary entrepreneurship</span> opportunities, launching their own innovative cloud kitchens, fine-dining ventures, or modern restaurant startups.
+                    Others aim to capture booming <span className="font-semibold text-gray-900">food-tech <span className="text-[#E23744]">(like Zomato)</span> and culinary entrepreneurship</span> opportunities, launching their own innovative cloud kitchens, fine-dining ventures, or modern restaurant startups.
                   </li>
                   <li className="relative">
                     <span className="absolute -left-[21px] top-1.5 h-2 w-2 rounded-full bg-[#FED304]" />
