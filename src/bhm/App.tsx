@@ -394,7 +394,7 @@ export default function App() {
           {/* Header */}
           <div className="mb-6 md:mb-10 text-left">
             <h2 className="text-[28px] md:text-[40px] font-bold text-[#161D4A] tracking-tight font-sans leading-tight mb-1 md:mb-2">
-              Top Placements
+              Top Placements Partners
             </h2>
             <p className="text-[13px] md:text-[15px] text-gray-700 font-secondary tracking-wide">
               And industry interactions.
@@ -554,11 +554,11 @@ export default function App() {
         <div className="max-w-[1000px] mx-auto px-[20px] relative z-10">
           <div className="mb-6 md:mb-10 text-center mx-auto max-w-xl">
             <h2 className="text-[28px] md:text-[40px] font-bold text-white tracking-tight font-sans leading-tight mb-1 md:mb-2">
-              Campus Infrastructure
+              Life At AMC
             </h2>
-            <p className="text-[13px] md:text-[15px] text-white/70 font-secondary tracking-wide">
+            {/* <p className="text-[13px] md:text-[15px] text-white/70 font-secondary tracking-wide">
               Explore our world-class hospitality training facilities.
-            </p>
+            </p> */}
           </div>
 
           {/* Wide video container stretching to the container width */}
