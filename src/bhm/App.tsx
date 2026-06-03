@@ -1863,7 +1863,7 @@ export default function App() {
       </section>
 
       {/* STICKY FOOTER CTA */}
-      <div className="sticky bottom-0 z-[45] w-full bg-white/95 backdrop-blur-md shadow-[0_-4px_25px_rgba(0,0,0,0.1)] border-t border-gray-200 transition-all duration-300">
+      {/* <div className="sticky bottom-0 z-[45] w-full bg-white/95 backdrop-blur-md shadow-[0_-4px_25px_rgba(0,0,0,0.1)] border-t border-gray-200 transition-all duration-300">
         <div className="max-w-[1280px] mx-auto px-[20px] py-3 sm:py-4 flex items-center justify-between gap-3 sm:gap-4">
           <div className="flex items-center gap-3 sm:gap-4">
             <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-lg overflow-hidden shadow-sm border border-gray-200">
@@ -1903,7 +1903,7 @@ export default function App() {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
       </div>
 
       {/* 3. Footer */}
