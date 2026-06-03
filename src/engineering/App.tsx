@@ -299,7 +299,7 @@ export default function EngineeringLanding() {
         </main>
 
         {/* Sticky Event Registration Footer */}
-        {isStickyVisible && (
+        {/* {isStickyVisible && (
           <div className="sticky bottom-0 z-40 w-full bg-[#161D4A] border-t-2 border-[#FED304] shadow-[0_-8px_30px_rgba(0,0,0,0.2)]">
             <div className="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
               <div className="flex items-center space-x-3.5 min-w-0">
@@ -341,7 +341,7 @@ export default function EngineeringLanding() {
               </div>
             </div>
           </div>
-        )}
+        )} */}
       </div>
 
       <footer className="bg-[#161D4A] text-white pt-16 pb-8 border-t border-[#ADDDF1]/15 relative overflow-hidden">
