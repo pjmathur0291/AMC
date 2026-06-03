@@ -311,7 +311,7 @@ export default function App() {
                 <ChevronRight className="w-5 h-5 stroke-[3]" />
               </button>
             </div>
-            <div className="flex flex-wrap justify-start items-center gap-6 md:gap-5 py-[20px]">
+            <div className="flex flex-wrap justify-start items-center gap-6 md:gap-5 py-[40px]">
             {/* AICTE Logo */}
             <div className="bg-white rounded-md shadow-sm border border-red-50 p-0 w-[90px] h-[100px] md:w-[90px] md:h-[90px] flex items-start justify-center overflow-hidden">
               <img 

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: 'Poppins', ui-sans-serif, system-ui;
+
+  --color-brand-blue: #161D4A;
+  --color-brand-dark: #0f132e;
+  --color-brand-yellow: #FED304;
+  --color-brand-light: #ADDDF1;
+}
+
+body {
+  @apply text-gray-800 bg-brand-blue font-sans antialiased;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}

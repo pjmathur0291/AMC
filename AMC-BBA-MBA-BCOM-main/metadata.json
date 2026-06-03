@@ -1,0 +1,6 @@
+{
+  "name": "AMC Degree College Landing Page",
+  "description": "A high-conversion landing page for AMC Degree College BBA, BCom, and MBA admissions with a lead capture form.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
