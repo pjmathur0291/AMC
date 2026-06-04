@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
+import { scrollToLeadForm } from '../scrollToLeadForm';
 
 export function StickyFooterBanner() {
   const [isVisible, setIsVisible] = useState(true);
@@ -54,7 +55,11 @@ export function StickyFooterBanner() {
             </div>
           </div>
           
-          <button className="shrink-0 bg-brand-yellow hover:bg-[#e5bd03] text-brand-dark px-4 py-2.5 md:px-6 md:py-3.5 rounded-md text-[11px] sm:text-xs md:text-sm font-bold tracking-wider uppercase transition-colors shadow-sm flex items-center gap-1.5 md:gap-2">
+          <button
+            type="button"
+            onClick={scrollToLeadForm}
+            className="shrink-0 bg-brand-yellow hover:bg-[#e5bd03] text-brand-dark px-4 py-2.5 md:px-6 md:py-3.5 rounded-md text-[11px] sm:text-xs md:text-sm font-bold tracking-wider uppercase transition-colors shadow-sm flex items-center gap-1.5 md:gap-2"
+          >
             Register <span className="hidden sm:inline">Now</span>
             <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>

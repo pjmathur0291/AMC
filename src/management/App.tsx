@@ -4,6 +4,7 @@
  */
 
 import { Headset } from 'lucide-react';
+import { scrollToLeadForm } from './scrollToLeadForm';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { PainPoint } from './components/PainPoint';
@@ -44,7 +45,11 @@ export default function App() {
       {/* <StickyFooterBanner /> */}
 
       {/* Floating Action Button */}
-      <button className="fixed bottom-24 right-5 md:bottom-28 md:right-8 bg-brand-yellow hover:bg-[#e5bd03] text-brand-dark font-bold px-[22px] py-3.5 rounded-full shadow-[0_10px_25px_rgba(254,211,4,0.35)] flex items-center gap-2.5 z-50 transition-transform hover:-translate-y-1 hover:scale-105 border-[3px] border-white">
+      <button
+        type="button"
+        onClick={scrollToLeadForm}
+        className="fixed bottom-24 right-5 md:bottom-28 md:right-8 bg-brand-yellow hover:bg-[#e5bd03] text-brand-dark font-bold px-[22px] py-3.5 rounded-full shadow-[0_10px_25px_rgba(254,211,4,0.35)] flex items-center gap-2.5 z-50 transition-transform hover:-translate-y-1 hover:scale-105 border-[3px] border-white"
+      >
         <Headset className="w-[18px] h-[18px]" />
         <span className="tracking-wide text-[13px] uppercase">Admissions Help</span>
       </button>

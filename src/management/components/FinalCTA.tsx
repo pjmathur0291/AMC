@@ -1,5 +1,5 @@
-import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { scrollToLeadForm } from '../scrollToLeadForm';
 
 export function FinalCTA() {
   return (
@@ -27,7 +27,11 @@ export function FinalCTA() {
           Start your journey in one of the leading degree colleges in Bangalore and build a successful career in business, commerce, or management.
         </p>
         
-        <button className="group relative flex items-center justify-center gap-3 bg-[#fbbf24] text-[#10102b] px-8 py-4 rounded-full text-[16px] md:text-[17px] font-bold transition-all duration-300 hover:bg-white hover:shadow-[0_20px_40px_rgba(251,191,36,0.3)] hover:-translate-y-1 z-10 overflow-hidden">
+        <button
+          type="button"
+          onClick={scrollToLeadForm}
+          className="group relative flex items-center justify-center gap-3 bg-[#fbbf24] text-[#10102b] px-8 py-4 rounded-full text-[16px] md:text-[17px] font-bold transition-all duration-300 hover:bg-white hover:shadow-[0_20px_40px_rgba(251,191,36,0.3)] hover:-translate-y-1 z-10 overflow-hidden"
+        >
           <span className="relative z-10">Start Your Application</span>
           <div className="w-7 h-7 rounded-full bg-[#10102b]/10 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 relative z-10">
             <ArrowRight className="w-4 h-4" strokeWidth={2.5} />

@@ -1,4 +1,4 @@
-import React from 'react';
+import { scrollToLeadForm } from '../scrollToLeadForm';
 
 export function PainPoint() {
   return (
@@ -32,7 +32,11 @@ export function PainPoint() {
               At AMC Degree College, we help you turn your interests into real skills and career opportunities.
             </p>
           </div>
-          <button className="mt-8 bg-brand-yellow hover:bg-[#e5bd03] text-brand-dark text-[13px] font-bold py-2.5 px-6 transition-colors">
+          <button
+            type="button"
+            onClick={scrollToLeadForm}
+            className="mt-8 bg-brand-yellow hover:bg-[#e5bd03] text-brand-dark text-[13px] font-bold py-2.5 px-6 transition-colors"
+          >
             Read More
           </button>
         </div>

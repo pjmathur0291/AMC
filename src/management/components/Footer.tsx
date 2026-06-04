@@ -1,5 +1,5 @@
-import React from 'react';
 import { MapPin, Phone, Mail, Headset, ChevronUp } from 'lucide-react';
+import { scrollToLeadForm } from '../scrollToLeadForm';
 
 export function Footer() {
   const scrollToTop = () => {
@@ -74,7 +74,11 @@ export function Footer() {
              </ul>
              
              <div className="mt-10 flex justify-end md:justify-start lg:justify-end">
-               <button className="bg-brand-yellow hover:bg-[#e5bd03] text-brand-dark px-6 py-3 rounded-full font-bold text-sm flex items-center justify-center gap-2 shadow-[0_4px_14px_rgba(254,211,4,0.25)] transition-all">
+               <button
+                 type="button"
+                 onClick={scrollToLeadForm}
+                 className="bg-brand-yellow hover:bg-[#e5bd03] text-brand-dark px-6 py-3 rounded-full font-bold text-sm flex items-center justify-center gap-2 shadow-[0_4px_14px_rgba(254,211,4,0.25)] transition-all"
+               >
                  <Headset className="w-[18px] h-[18px]" />
                  ADMISSIONS HELP
                </button>

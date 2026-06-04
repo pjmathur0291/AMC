@@ -3,7 +3,10 @@ import EdmissionFormIframe from './EdmissionFormIframe';
 
 export function LeadForm() {
   return (
-    <div className="bg-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] w-full relative z-20 flex flex-col overflow-hidden">
+    <div
+      id="apply-lead-form"
+      className="bg-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] w-full relative z-20 flex flex-col overflow-hidden scroll-mt-20"
+    >
       {/* Header section (Dark) */}
       <div className="bg-brand-dark pt-8 pb-6 px-8 relative border-b-4 border-brand-yellow">
         <h3 className="text-white font-display text-2xl font-bold">Apply Now</h3>

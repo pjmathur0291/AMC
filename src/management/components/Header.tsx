@@ -1,3 +1,5 @@
+import { scrollToLeadForm } from '../scrollToLeadForm';
+
 export function Header() {
   return (
     <header className="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
@@ -12,13 +14,26 @@ export function Header() {
         </div>
 
         {/* Actions */}
-        <div className="hidden md:flex items-center gap-5">
+        <div className="flex items-center gap-3 md:gap-5">
+          <button
+            type="button"
+            onClick={scrollToLeadForm}
+            className="md:hidden bg-brand-yellow hover:bg-[#e5bd03] transition-colors text-brand-dark px-4 py-2 rounded-[4px] font-bold text-[11px] tracking-wide shadow-sm"
+          >
+            ENQUIRE
+          </button>
+          <div className="hidden md:flex items-center gap-5">
           <div className="bg-brand-light text-brand-blue px-4 py-2.5 rounded-full text-[12px] font-bold tracking-widest border border-[#99c8da] shadow-sm">
             BBA | BCOM | MBA
           </div>
-          <button className="bg-brand-yellow hover:bg-[#e5bd03] transition-colors text-brand-dark px-7 py-2.5 rounded-[4px] font-bold text-[13px] tracking-wide shadow-sm">
+          <button
+            type="button"
+            onClick={scrollToLeadForm}
+            className="bg-brand-yellow hover:bg-[#e5bd03] transition-colors text-brand-dark px-7 py-2.5 rounded-[4px] font-bold text-[13px] tracking-wide shadow-sm"
+          >
             ENQUIRE NOW
           </button>
+          </div>
         </div>
       </div>
     </header>

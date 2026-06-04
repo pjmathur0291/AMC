@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BookOpen, TrendingUp, Briefcase, Award, Layers } from 'lucide-react';
+import { scrollToLeadForm } from '../scrollToLeadForm';
 
 const programsData = [
   {
@@ -168,7 +169,11 @@ export function Programs() {
                   </div>
                 )}
 
-                <button className="bg-brand-dark hover:bg-[#a9181a] text-white font-bold text-[13px] tracking-wide uppercase px-8 py-3.5 rounded-full transition-all hover:shadow-lg">
+                <button
+                  type="button"
+                  onClick={scrollToLeadForm}
+                  className="bg-brand-dark hover:bg-[#a9181a] text-white font-bold text-[13px] tracking-wide uppercase px-8 py-3.5 rounded-full transition-all hover:shadow-lg"
+                >
                   Apply Now
                 </button>
              </div>
