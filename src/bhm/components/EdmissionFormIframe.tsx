@@ -29,7 +29,7 @@ export default function EdmissionFormIframe() {
     <iframe
       src={iframeSrc}
       width="100%"
-      height="500"
+      height="550"
       style={{ border: 0 }}
       title="Edmission Form"
     />
