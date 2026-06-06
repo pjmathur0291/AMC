@@ -431,7 +431,7 @@ export default function App() {
                 </div>
                 <div className="flex items-center space-x-2.5">
                   <Phone className="w-4 h-4 text-[#FED304] shrink-0" />
-                  <span className="text-[#ADDDF1]/90">+91 9902044114</span>
+                  <span className="text-[#ADDDF1]/90"><a href="tel:+919902044114">+91 9902044114</a></span>
                 </div>
                 <div className="flex items-center space-x-2.5">
                   <Mail className="w-4 h-4 text-[#FED304] shrink-0" />

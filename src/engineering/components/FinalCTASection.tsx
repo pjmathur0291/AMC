@@ -36,9 +36,9 @@ export default function FinalCTASection() {
                 Admissions Metrics Hotline:
               </h4>
               <p className="text-xs text-[#ADDDF1]/90 font-mono leading-relaxed">
-                Direct Counseling Office: +91 9902044114
+                Direct Counseling Office: <a href="tel:+919902044114">+91 9902044114</a>
                 <br />
-                General Academic Query: admissions@amceducation.in
+                General Academic Query: <a href="mailto:admissions@amceducation.in">admissions@amceducation.in</a>
               </p>
             </div>
           </div>

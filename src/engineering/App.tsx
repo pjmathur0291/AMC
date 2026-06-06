@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, FormEvent } from 'react';
+import { useState } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import PlacementsSection from './components/PlacementsSection';
@@ -10,139 +10,10 @@ import IndustryExposureSection from './components/IndustryExposureSection';
 import CampusLifeSection from './components/CampusLifeSection';
 import SocialProofSection from './components/SocialProofSection';
 import FinalCTASection from './components/FinalCTASection';
-import { Phone, Mail, MapPin, Send, X, ChevronUp, CheckCircle, Headphones } from 'lucide-react';
+import { Phone, Mail, MapPin, ChevronUp, CheckCircle } from 'lucide-react';
 
 export default function EngineeringLanding() {
-  const [isChatOpen, setIsChatOpen] = useState(false);
-  const [messages, setMessages] = useState<Array<{ sender: 'user' | 'counselor'; text: string; time: string }>>([
-    {
-      sender: 'counselor',
-      text: "Welcome to AMC Engineering College Admissions Desk! I'm Prof. Swetha. How may I assist you with your BTech or MTech choices today?",
-      time: 'Just now',
-    },
-  ]);
-  const [userInput, setUserInput] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
-  const [isStickyVisible, setIsStickyVisible] = useState(true);
-
   const [notification, setNotification] = useState<string | null>(null);
-
-  const chatEndRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (chatEndRef.current) {
-      chatEndRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [messages, isTyping]);
-
-  const quickQuestions = [
-    'What is the average package?',
-    'Tell me about lab equipment',
-    'Are admissions currently open?',
-    'Where is the campus located?',
-  ];
-
-  const handleQuickQuestion = async (question: string) => {
-    if (isTyping) return;
-
-    const userMsg = {
-      sender: 'user' as const,
-      text: question,
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-    };
-
-    const newMessages = [...messages, userMsg];
-    setMessages(newMessages);
-    setIsTyping(true);
-
-    try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: question,
-          history: messages,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to reach counselor');
-      }
-
-      const data = await response.json();
-      const counselorMsg = {
-        sender: 'counselor' as const,
-        text: data.response,
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      };
-      setMessages((prev) => [...prev, counselorMsg]);
-    } catch (error) {
-      console.error(error);
-      const errorMsg = {
-        sender: 'counselor' as const,
-        text: 'I am having connection issues reaching the admissions database. Please register using the form on this page so our admissions team can call you directly!',
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      };
-      setMessages((prev) => [...prev, errorMsg]);
-    } finally {
-      setIsTyping(false);
-    }
-  };
-
-  const handleSendMessage = async (e: FormEvent) => {
-    e.preventDefault();
-    if (!userInput.trim() || isTyping) return;
-
-    const currentInput = userInput.trim();
-    setUserInput('');
-
-    const userMsg = {
-      sender: 'user' as const,
-      text: currentInput,
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-    };
-
-    const newMessages = [...messages, userMsg];
-    setMessages(newMessages);
-    setIsTyping(true);
-
-    try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: currentInput,
-          history: messages,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to reach counselor');
-      }
-
-      const data = await response.json();
-      const counselorMsg = {
-        sender: 'counselor' as const,
-        text: data.response,
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      };
-      setMessages((prev) => [...prev, counselorMsg]);
-    } catch (error) {
-      console.error(error);
-      const errorMsg = {
-        sender: 'counselor' as const,
-        text: 'I am having connection issues reaching the admissions database. Please register using the form on this page so our admissions team can call you directly!',
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      };
-      setMessages((prev) => [...prev, errorMsg]);
-    } finally {
-      setIsTyping(false);
-    }
-  };
 
   const notifyUserFromFormSubmit = (data: { name: string; course: string }) => {
     setNotification(`Successfully registered counseling session for ${data.name} (${data.course})!`);
@@ -157,7 +28,6 @@ export default function EngineeringLanding() {
 
   return (
     <div className="min-h-screen bg-[#FFFFFF] relative selection:bg-[#FED304] selection:text-[#161D4A] flex flex-col">
-      {/* Dynamic Pop notification bar */}
       {notification && (
         <div className="fixed bottom-6 left-6 z-50 bg-[#FED304] text-[#161D4A] px-5 py-4 rounded-xl shadow-2xl border border-[#161D4A]/10 flex items-center space-x-3 max-w-sm animate-in slide-in-from-bottom-6 duration-300">
           <CheckCircle className="w-5 h-5 shrink-0 text-[#161D4A]" />
@@ -165,125 +35,8 @@ export default function EngineeringLanding() {
         </div>
       )}
 
-      {/* Floating Messenger Widget */}
-      <div className={`fixed transition-all duration-300 right-6 z-50 ${isStickyVisible ? 'bottom-22 sm:bottom-24' : 'bottom-6'}`}>
-        {isChatOpen ? (
-          <div className="w-80 sm:w-85 bg-[#161D4A] text-white rounded-2xl shadow-2xl border border-[#ADDDF1]/20 flex flex-col overflow-hidden animate-in zoom-in-95 duration-200">
-            {/* Header chat block */}
-            <div className="bg-[#161D4A] border-b border-[#ADDDF1]/15 p-4.5 flex items-center justify-between">
-              <div className="flex items-center space-x-3 text-left">
-                <div className="relative">
-                  <div className="w-10 h-10 rounded-full overflow-hidden border border-[#FED304]">
-                    <img
-                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&h=200&q=80"
-                      alt="Prof Swetha"
-                      className="w-full h-full object-cover"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-[#161D4A]"></span>
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-white leading-none">Prof. Swetha Acharya</h4>
-                  <span className="text-[10px] text-green-400 font-mono font-bold uppercase tracking-widest leading-none block mt-1">
-                    ● Admissions Desk
-                  </span>
-                </div>
-              </div>
-              <button
-                onClick={() => setIsChatOpen(false)}
-                className="p-1 hover:bg-[#FFFFFF]/10 rounded-md text-gray-400 hover:text-white"
-                id="close-chat-btn"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            {/* Messages pane */}
-            <div className="flex-1 p-4 space-y-4 max-h-64 overflow-y-auto text-left" id="chat-messages-container">
-              {messages.map((msg, i) => (
-                <div key={i} className={`flex flex-col ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}>
-                  <div
-                    className={`p-3 rounded-xl text-xs max-w-[85%] leading-relaxed ${
-                      msg.sender === 'user'
-                        ? 'bg-[#FED304] text-[#161D4A] rounded-br-none font-bold'
-                        : 'bg-[#FFFFFF]/10 text-[#FFFFFF] rounded-bl-none border border-[#FFFFFF]/5'
-                    }`}
-                  >
-                    {msg.text}
-                  </div>
-                  <span className="text-[9px] text-[#ADDDF1]/50 mt-1 font-mono tracking-widest uppercase">{msg.time}</span>
-                </div>
-              ))}
-              {isTyping && (
-                <div className="flex flex-col items-start animate-pulse">
-                  <div className="p-3 rounded-xl text-xs max-w-[85%] bg-[#FFFFFF]/10 text-[#FFFFFF]/70 rounded-bl-none border border-[#FFFFFF]/5 flex items-center space-x-1">
-                    <span className="w-1.5 h-1.5 bg-white/70 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
-                    <span className="w-1.5 h-1.5 bg-white/70 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
-                    <span className="w-1.5 h-1.5 bg-white/70 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
-                  </div>
-                </div>
-              )}
-              <div ref={chatEndRef} />
-            </div>
-
-            {/* Quick action buttons */}
-            <div className="p-3 bg-[#161D4A]/90 border-t border-[#ADDDF1]/10 text-left">
-              <span className="text-[9px] font-mono text-[#ADDDF1] uppercase tracking-widest block mb-2 font-bold">
-                Frequently Asked:
-              </span>
-              <div className="flex flex-wrap gap-1.5">
-                {quickQuestions.map((q) => (
-                  <button
-                    key={q}
-                    onClick={() => handleQuickQuestion(q)}
-                    className="text-[10px] font-semibold bg-[#FFFFFF]/5 hover:bg-[#FFFFFF]/15 border border-[#FFFFFF]/10 hover:border-[#FED304] text-[#FFFFFF]/90 hover:text-[#FED304] rounded-lg py-1 px-2 cursor-pointer transition-all whitespace-nowrap"
-                  >
-                    {q}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Chat Input form */}
-            <form
-              onSubmit={handleSendMessage}
-              className="p-3 border-t border-[#ADDDF1]/15 bg-[#161D4A] flex items-center space-x-2"
-            >
-              <input
-                type="text"
-                value={userInput}
-                onChange={(e) => setUserInput(e.target.value)}
-                placeholder="Type your academic query..."
-                className="flex-1 bg-[#FFFFFF]/5 border border-[#ADDDF1]/10 rounded-xl py-2 px-3 text-xs text-white placeholder-gray-400 focus:outline-none focus:border-[#FED304]"
-              />
-              <button
-                type="submit"
-                className="p-2.5 bg-[#FED304] text-[#161D4A] rounded-xl hover:bg-[#FED304]/90 hover:scale-105 transition-all text-center shrink-0 cursor-pointer"
-                id="send-message-btn"
-              >
-                <Send className="w-3.5 h-3.5" />
-              </button>
-            </form>
-          </div>
-        ) : (
-          <button
-            onClick={() => {
-              setIsChatOpen(true);
-            }}
-            className="flex items-center space-x-2 px-4 py-3.5 bg-[#FED304] text-[#161D4A] hover:bg-[#FED304]/90 rounded-full shadow-2xl tracking-wider font-extrabold text-xs uppercase duration-200 transform hover:scale-105 select-none shrink-0 group border border-[#161D4A]/10 cursor-pointer"
-            id="chat-trigger-btn"
-          >
-            <Headphones className="w-5 h-5 animate-pulse text-[#161D4A]" />
-            <span className="font-sans">Admissions Help</span>
-          </button>
-        )}
-      </div>
-
-      {/* Primary Fixed Content structure */}
       <Navbar />
 
-      {/* Main wrapper for content and sticky footer */}
       <div className="relative flex-1 flex flex-col">
         <main className="relative flex flex-col">
           <HeroSection onSuccessSubmit={notifyUserFromFormSubmit} />
@@ -297,51 +50,6 @@ export default function EngineeringLanding() {
           <SocialProofSection />
           <FinalCTASection />
         </main>
-
-        {/* Sticky Event Registration Footer */}
-        {/* {isStickyVisible && (
-          <div className="sticky bottom-0 z-40 w-full bg-[#161D4A] border-t-2 border-[#FED304] shadow-[0_-8px_30px_rgba(0,0,0,0.2)]">
-            <div className="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
-              <div className="flex items-center space-x-3.5 min-w-0">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg overflow-hidden border border-[#FED304]/30 shrink-0 bg-gray-100 flex items-center justify-center shadow-inner">
-                  <img
-                    src="https://openday.amcgroup.edu.in/_components/v2/a84344c2237668234c2cf1a425a740b02e1984aa/Screenshot_2026-05-24_at_1.27.53_PM.389c6241.png"
-                    alt="AMC Open Day Screenshot"
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <div className="text-left min-w-0">
-                  <h4 className="text-xs sm:text-sm font-extrabold text-white tracking-wide uppercase font-display leading-tight truncate">
-                    Registration for OPEN Days
-                  </h4>
-                  <p className="text-[10px] sm:text-xs text-[#FED304] font-bold mt-0.5 uppercase tracking-wider font-mono">
-                    May 30th, Time 4:00 PM
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-2 sm:space-x-3 shrink-0">
-                <button
-                  onClick={() => {
-                    const el = document.getElementById('cta-form');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="px-3.5 py-1.5 sm:px-5 sm:py-2 text-[9px] sm:text-xs font-black uppercase tracking-widest rounded-lg bg-[#FED304] text-[#161D4A] hover:bg-[#FED304]/90 active:scale-95 transition-all shadow-md cursor-pointer border border-[#FED304]"
-                >
-                  Register
-                </button>
-                <button
-                  onClick={() => setIsStickyVisible(false)}
-                  className="p-1.5 hover:bg-white/10 rounded-md text-gray-400 hover:text-white transition-colors cursor-pointer"
-                  aria-label="Close open day registration footer"
-                >
-                  <X className="w-4 h-4 sm:w-5 sm:w-5" />
-                </button>
-              </div>
-            </div>
-          </div>
-        )} */}
       </div>
 
       <footer className="bg-[#161D4A] text-white pt-16 pb-8 border-t border-[#ADDDF1]/15 relative overflow-hidden">
@@ -403,7 +111,7 @@ export default function EngineeringLanding() {
                 </div>
                 <div className="flex items-center space-x-2.5">
                   <Phone className="w-4 h-4 text-[#FED304] shrink-0" />
-                  <span className="text-[#ADDDF1]/90">+91 9902044114</span>
+                  <span className="text-[#ADDDF1]/90"><a href="tel:+919902044114">+91 9902044114</a></span>
                 </div>
                 <div className="flex items-center space-x-2.5">
                   <Mail className="w-4 h-4 text-[#FED304] shrink-0" />
