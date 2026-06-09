@@ -1,0 +1,37 @@
+Lead Webhook Integration Guide for Mediagarh.
+Overview
+This document provides instructions for publishers to send lead data using a POST request
+to the webhook endpoint.
+API Endpoint
+Use the following URL to push leads via POST request:
+https://api.edmissioncrm.com/leads/webhook?api_key=pi_e1b07fb70c2a68e6ded72022e
+d9e984afc79b60cc01d57cce24d8f005ac37033
+Request Method
+POST
+Headers
+Content-Type: application/json
+Sample Request Body 1
+{
+"medium": "Mediagarh",
+"data": [
+{
+"first_name": "Tom",
+"last_name": "Johnson",
+"email": "tom.johnson@example.com",
+“Course” : “3”,
+"phone": {
+"country_code": "+91",
+"number": "9876543210"
+}
+}
+]
+}
+Notes
+- All fields inside the `data` array should be valid strings/numbers.
+- The `api_key` must be kept private and not shared publicly.
+- An Excel file containing the Course along with the ID is provided along with this
+documentation.
+- For the state field, you can pass either the state code (e.g., MH) or the full state name
+(e.g., Maharashtra); casing does not matter (upper/lower/mixed). The same applies to the
+city field — city names are also case-insensitive.”
+- Pass medium and campaign in the url parameter as: &medium= and &campaign=

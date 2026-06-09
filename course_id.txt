@@ -1,0 +1,41 @@
+id	Program	Course
+3	UG	B.E. CSE
+4	UG	B.E. CSDS
+5	UG	B.E. CS AIML
+6	UG	B.E. AIML
+7	UG	B.E. ECE
+8	UG	B.E. EEE
+9	UG	B.E. Aero
+11	UG	B.E. Civil
+12	UG	B.E. Mech
+13	UG	CSE LATERAL
+14	UG	CSE DS LATERAL
+15	UG	CSE AIML LATERAL
+16	UG	AIML LATERAL
+17	UG	ISE LATERAL
+18	UG	ECE LATERAL
+19	UG	CIVIL LATERAL
+20	UG	EEE LATERAL
+21	UG	AERO LATERAL
+22	UG	MECH LATERAL
+24	PG	M.Tech Computer Science & Engineering
+25	PG	M.Tech VLSI & Embedded Systems
+26	PG	M.Tech Machine Design
+27	PG	M.Tech Data Science
+28	PG	M.Tech Digital Electronics & Communication Engineering
+29	PG	M.B.A
+30	PG	MCA
+33	UG	BHM
+34	UG	B.Com
+36	UG	B.Com with ACCA
+37	UG	BBA
+38	UG	BBA - Aviation Management
+39	UG	BBA - Business Analytics
+40	UG	B.Sc. Biotechnology
+41	UG	BCA
+43	PG	M.B.A
+44	PG	MCA
+45	PG	M.Sc Technology
+46	UG	BCA - Cyber Security
+47	UG	BCA - AIML
+48	UG	BCA- Data Science

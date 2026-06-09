@@ -1,0 +1,6 @@
+{
+  "name": "AMC Group Bangalore Landing Page",
+  "description": "An interactive, visually aesthetic landing page for AMC Group of Institutions, Bangalore with course explorer, campus overview, placements records, and inquiries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
