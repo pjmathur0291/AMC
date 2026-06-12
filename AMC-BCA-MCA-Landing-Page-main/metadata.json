@@ -1,0 +1,6 @@
+{
+  "name": "AMC Engineering College Hero",
+  "description": "Hero section for AMC Engineering College admissions for BCA and MCA programs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

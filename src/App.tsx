@@ -7,6 +7,7 @@ import BhmLanding from './bhm/App';
 import EngineeringLanding from './engineering/App';
 import ManagementLanding from './management/App';
 import GeneralLanding from './general/App';
+import BcaMcaLanding from './bca-mca/App';
 import ThankYou from './ThankYou';
 
 function normalizePathname(pathname: string) {
@@ -34,6 +35,10 @@ export default function App() {
 
   if (pathname.startsWith('/admission-open-2026/')) {
     return <GeneralLanding />;
+  }
+
+  if (pathname.startsWith('/admission-open-for-bca-mca/')) {
+    return <BcaMcaLanding />;
   }
 
   if (pathname.startsWith('/thank-you/')) {
