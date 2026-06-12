@@ -1,0 +1,8 @@
+{
+  "name": "Remix: AMC Bioteach",
+  "description": "Premium admissions landing page for B.Sc. and M.Sc. Biotechnology programs at AMC College, Bangalore - affiliated with Bangalore University.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

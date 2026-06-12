@@ -22,14 +22,5 @@
     },
     "allowImportingTsExtensions": true,
     "noEmit": true
-  },
-  "include": ["src"],
-  "exclude": [
-    "node_modules",
-    "AMC-BBA-MBA-BCOM-main",
-    "AMC-Engineering-Landing-Page-main",
-    "AMC General landing Page",
-    "AMC-BCA-MCA-Landing-Page-main",
-    "AMC-BIOTEACH-Landing-Page-main"
-  ]
+  }
 }

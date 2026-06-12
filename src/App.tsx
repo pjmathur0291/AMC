@@ -8,6 +8,7 @@ import EngineeringLanding from './engineering/App';
 import ManagementLanding from './management/App';
 import GeneralLanding from './general/App';
 import BcaMcaLanding from './bca-mca/App';
+import BiotechLanding from './biotech/App';
 import ThankYou from './ThankYou';
 
 function normalizePathname(pathname: string) {
@@ -39,6 +40,10 @@ export default function App() {
 
   if (pathname.startsWith('/admission-open-for-bca-mca/')) {
     return <BcaMcaLanding />;
+  }
+
+  if (pathname.startsWith('/admission-open-2026-biotech/')) {
+    return <BiotechLanding />;
   }
 
   if (pathname.startsWith('/thank-you/')) {
